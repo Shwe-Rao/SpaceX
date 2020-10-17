@@ -1,0 +1,81 @@
+<div class="spacex-container">
+    <div class="title">SpaceX Launch Program</div>
+    <div class="wrapper flex-container">
+        <div class="sidenav">
+            <div class="sidenav-container">
+                <div class="title">
+                    Filters
+                </div>
+                <div>
+                    <div class="sec-title">Launch Year</div>
+                    <hr>
+                    <div class="grid action-buttons btn-group btn-group-toggle" data-toggle="buttons">
+                        <div *ngFor="let eachYear of yearArray">
+                            <label class="btn btn-success">
+                                <input type="radio" name="options" value="{{eachYear.yearSelected}}" #eachSelectedYear
+                                    [(ngModel)]="yearSelected" autocomplete="off" (click)="onYearSelected(eachYear.yearSelected)"> {{eachYear.yearSelected}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="sec-title">Successful Launch</div>
+                    <hr>
+                    <div class="grid action-buttons btn-group btn-group-toggle" data-toggle="buttons">
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" name="launch" id="launch1" value="true" [(ngModel)]="launchSelected"
+                                    (click)="onLaunchClick('true')" autocomplete="off"> True
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" name="launch" id="launch2" value="false"
+                                    [(ngModel)]="launchSelected" (click)="onLaunchClick('false')" autocomplete="off">
+                                False
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="sec-title">Successful Landing</div>
+                    <hr>
+                    <div class="grid action-buttons btn-group btn-group-toggle" data-toggle="buttons">
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" name="landing" id="landing1" value="true"
+                                    [(ngModel)]="landingSelected" (click)="onLandingClick('true')" autocomplete="off">
+                                True
+                            </label>
+                        </div>
+                        <div>
+                            <label class="btn btn-success">
+                                <input type="radio" name="landing" id="landing2" value="false"
+                                    [(ngModel)]="landingSelected" (click)="onLandingClick('false')" autocomplete="off">
+                                False
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="launch-container row">
+                <div *ngFor="let eachDetail of launchData" class="eachDetail-card">
+                    <div class="card launch-card">
+                        <img class="card-img-top" src={{eachDetail.links.mission_patch_small}}>
+                        <div class="card-body">
+                            <span class="flight-text">{{eachDetail.mission_name}}</span> <span class="flight-text"> #{{eachDetail.flight_number}}</span>
+                            <div>Mission Ids: </div>
+                            <li class="value-text" *ngFor="let id of eachDetail.mission_id">{{ id }}</li>
+                            <div class="label">Launch Year: <span class="value-text">{{eachDetail.launch_year}}</span> </div>
+                            <div class="label">Successful Launch: <span class="value-text">{{eachDetail.launch_success}} </span></div>
+                            <div class="label">Successful Landing: <span class="value-text">{{eachDetail.rocket.first_stage.cores[0].land_success }} </span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

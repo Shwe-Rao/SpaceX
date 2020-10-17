@@ -1,0 +1,157 @@
+.spacex-container {
+    background-color: #D0D0D0;
+}
+
+.title {
+    font-size: 25px;
+    padding: 1%;
+    font-weight: 500;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #D0D0D0;
+    flex-direction: row;
+}
+
+.content {
+    //width: 100%;
+    //position: absolute;
+    right:0px;
+    top:0px;
+    background-color:#D0D0D0;
+    //max-height: calc(100% - 67px);
+  }
+
+.sidenav {
+    height: 100%;
+    background-color: #D0D0D0;
+    transition: all 0.3s;
+    min-width: 13rem;
+    //position: fixed;
+    left:0;
+    top:0;
+    z-index: 999;
+    opacity: 0.8;
+    padding-left: 1%;
+}
+
+.sidenav-container {
+    padding: 2%;
+    background-color: #FFF;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sec-title {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.action-buttons {
+    padding-left: 8%;
+    width: 100%;
+}
+
+input[type=radio] {
+    display: none; 
+}
+
+.btn {
+    height: 30px;
+    font-size: 12px;
+}
+
+hr {
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.launch-container {
+    padding: 0 2% 0 2%;
+}
+
+.launch-card {
+    width: 13rem;
+    height: 21rem !important;
+    align-items: center;
+}
+
+.card-body {
+    padding: 0;
+    font-size: 14px;
+    flex: 50%;
+}
+
+.card-img-top {
+    width: 165px;
+    margin-top: 5px;
+    background-color:#D0D0D0;
+}
+
+.eachDetail-card {
+    margin: 0 6px 1rem 1rem;
+}
+
+.btn.btn-success:not(:disabled):not(.disabled).active {
+    color: #fff;
+    background-color: #215c09;
+    border-color: #215c09;
+}
+
+.flight-text {
+    font-weight: 700;
+    color: #003399;
+}
+
+.label {
+    font-weight: 600;
+}
+
+.value-text {
+    font-weight: 600;
+    color: #003399;
+    opacity: 0.4;
+}
+
+@media (min-width:700px) and (max-width:1024px) {
+    .sidenav {
+        min-width: 13rem;
+    }
+    .flex-container {
+        flex-direction: row;
+    }
+    .launch-card {
+        width: 11rem;
+    }
+}
+
+// @media (min-width:1px) and (max-width:700px){
+//     .sidenav {
+//         min-width: 190px;
+//     }
+// } 
+
+@media (min-width:1px) and (max-width:699px) {
+    .sidenav {
+        width: 13rem;
+    }
+
+    .flex-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .launch-container {
+        padding: 0 2% 0 12%;
+    }
+    
+}
