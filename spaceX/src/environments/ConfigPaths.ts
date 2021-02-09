@@ -1,6 +1,6 @@
 export const ConfigPaths = {
     "SERVERS": {
-        "development": "https://api.spaceXdata.com/v3/launches?limit=8"
+        "development": "https://api.spaceXdata.com/v3/launches?limit=25"
     },
 
     "URLS": {

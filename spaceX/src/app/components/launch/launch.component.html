@@ -3,16 +3,21 @@
     <div class="wrapper flex-container">
         <div class="sidenav">
             <div class="sidenav-container">
+                <div class="d-flex justify-content-between">
                 <div class="title">
                     Filters
+                </div>
+                <div>
+                    <span *ngIf="(yearSelected || launchSelected || landingSelected)"><a class="clear-filter" (click)="onClearFilterClick()" >Clear Filters</a></span>
+                </div>
                 </div>
                 <div>
                     <div class="sec-title">Launch Year</div>
                     <hr>
                     <div class="grid action-buttons btn-group btn-group-toggle" data-toggle="buttons">
                         <div *ngFor="let eachYear of yearArray">
-                            <label class="btn btn-success">
-                                <input type="radio" name="options" value="{{eachYear.yearSelected}}" #eachSelectedYear
+                            <label class="btn btn-success" [class.active]="eachYear.active">
+                                <input type="radio" name="options" value="{{eachYear.yearSelected}}"
                                     [(ngModel)]="yearSelected" autocomplete="off" (click)="onYearSelected(eachYear.yearSelected)"> {{eachYear.yearSelected}}
                             </label>
                         </div>
@@ -24,13 +29,13 @@
                     <hr>
                     <div class="grid action-buttons btn-group btn-group-toggle" data-toggle="buttons">
                         <div>
-                            <label class="btn btn-success">
+                            <label class="btn btn-success" [class.active]="launchActiveTrue">
                                 <input type="radio" name="launch" id="launch1" value="true" [(ngModel)]="launchSelected"
                                     (click)="onLaunchClick('true')" autocomplete="off"> True
                             </label>
                         </div>
                         <div>
-                            <label class="btn btn-success">
+                            <label class="btn btn-success" [class.active]="launchActiveFalse">
                                 <input type="radio" name="launch" id="launch2" value="false"
                                     [(ngModel)]="launchSelected" (click)="onLaunchClick('false')" autocomplete="off">
                                 False
@@ -43,14 +48,14 @@
                     <hr>
                     <div class="grid action-buttons btn-group btn-group-toggle" data-toggle="buttons">
                         <div>
-                            <label class="btn btn-success">
+                            <label class="btn btn-success" [class.active]="landingActiveTrue">
                                 <input type="radio" name="landing" id="landing1" value="true"
                                     [(ngModel)]="landingSelected" (click)="onLandingClick('true')" autocomplete="off">
                                 True
                             </label>
                         </div>
                         <div>
-                            <label class="btn btn-success">
+                            <label class="btn btn-success" [class.active]="landingActiveFalse">
                                 <input type="radio" name="landing" id="landing2" value="false"
                                     [(ngModel)]="landingSelected" (click)="onLandingClick('false')" autocomplete="off">
                                 False
@@ -75,7 +80,13 @@
                         </div>
                     </div>
                 </div>
+                <div *ngIf="data == 0">
+                    <div class="no-data">No Data Available</div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<footer>
+    <span class="footer-text">Developed By: </span> <span> Shwetha Rao</span>
+</footer>

@@ -1,5 +1,9 @@
+body {
+    background-color: #f2f2f2;
+}
 .spacex-container {
-    background-color: #D0D0D0;
+    background-color: #f2f2f2;
+    max-width: 1440px;
 }
 
 .title {
@@ -14,22 +18,22 @@
     height: 100%;
     position: relative;
     overflow: hidden;
-    background-color: #D0D0D0;
+    background-color: #f2f2f2;
     flex-direction: row;
 }
 
 .content {
-    //width: 100%;
+    width: 100%;
     //position: absolute;
     right:0px;
     top:0px;
-    background-color:#D0D0D0;
+    background-color:#f2f2f2;
     //max-height: calc(100% - 67px);
   }
 
 .sidenav {
     height: 100%;
-    background-color: #D0D0D0;
+    background-color: #f2f2f2;
     transition: all 0.3s;
     min-width: 13rem;
     //position: fixed;
@@ -80,7 +84,7 @@ hr {
 }
 
 .launch-card {
-    width: 13rem;
+    width: 15rem;
     height: 21rem !important;
     align-items: center;
 }
@@ -92,15 +96,21 @@ hr {
 }
 
 .card-img-top {
-    width: 165px;
+    width: 180px;
+    height: 172px;
     margin-top: 5px;
-    background-color:#D0D0D0;
+    background-color:#f2f2f2;
 }
 
 .eachDetail-card {
-    margin: 0 6px 1rem 1rem;
+    margin: 0 0px 5px 1rem;
 }
 
+.btn-success {
+    color: #000;
+    background-color: #c5e09b;
+    border-color: #c5e09b;
+}
 .btn.btn-success:not(:disabled):not(.disabled).active {
     color: #fff;
     background-color: #215c09;
@@ -132,6 +142,10 @@ hr {
     .launch-card {
         width: 11rem;
     }
+
+    .card-img-top {
+        width: 150px;
+    }
 }
 
 // @media (min-width:1px) and (max-width:700px){
@@ -151,7 +165,42 @@ hr {
     }
 
     .launch-container {
-        padding: 0 2% 0 12%;
+        padding: 0;
+    }
+
+    .eachDetail-card {
+        margin: 0 0px 5px 6rem;
     }
     
+}
+
+
+
+@media (min-width:1440px)  {
+    .spacex-container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+
+.no-data {
+    padding: 3rem 0px 0px 4rem;
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    padding: 1%;
+    background-color: #f2f2f2;
+}
+
+.footer-text {
+    font-weight: 600;
+}
+
+.clear-filter {
+    cursor: pointer;
 }
